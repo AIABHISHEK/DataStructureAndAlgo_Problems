@@ -17,13 +17,14 @@ cout<<result;
 int x = lower_bound(a, a+4, 3) - a; // points at 3
 int y = lower_bound(a, a+4, 8) - a; //points at 9
 int z = lower_bound(a, a+4, 100) - a; //points at end of array
+cout<<z;
 int *p = lower_bound(a, a+4, 3);
-cout<<*p;
+// cout<<*p;
 vector<int> b = {1,2,2,3};
 // vector<int>::iterator q;
 // auto q = lower_bound(b.begin(), b.end(), 2);
  int index = lower_bound(b.begin(), b.end(), 2) - b.begin();
-cout<<index;
+// cout<<index;
 // upper_bound points to next greater element
 // time complexity log(n)
 return 0;
