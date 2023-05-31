@@ -4,8 +4,18 @@
 #define int_ unsigned int
 
 using namespace std;
-int solve(vector<int> arr, int k){
-
+/**
+ * Calculates the length of the maximum subarray whose sum is equal to k.
+ *
+ * @param arr vector of integers to compute the maximum subarray length
+ * @param k integer sum to match
+ *
+ * @return integer length of the maximum subarray whose sum is equal to k.
+ *
+ * @throws none
+ */
+int solve(vector<int> arr, int k)
+{
     int sum = 0;
     int maxLen = 0;
     map<int, int> preSumMap;
