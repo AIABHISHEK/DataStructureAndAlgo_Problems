@@ -45,11 +45,15 @@ int main()
     cin.tie(NULL);                    // fastio
     int m = 10e7;
     cout << m << endl;
+    // vector<vector<int>> v = {
+    //     {0, 2, m, m},
+    //     {1, 0, 3, m},
+    //     {m, m, 0, m},
+    //     {3, 5, 4, 0}};
     vector<vector<int>> v = {
-        {0, 2, m, m},
-        {1, 0, 3, m},
-        {m, m, 0, m},
-        {3, 5, 4, 0}};
+        {0, 2, m},
+        {2, 0, 3},
+        {m, 3, 0}};
     solve(v, 4);
     return 0;
 }

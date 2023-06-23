@@ -5,7 +5,17 @@
 
 using namespace std;
 
-void solve(vector<pair<int, int>> graph[], int v, int sourceNode){
+/**
+ * An implementation of topological sorting and shortest path algorithm.
+ *
+ * @param graph an adjacency list representation of graph
+ * @param v the number of vertices in the graph
+ * @param sourceNode the starting node for shortest path computation
+ *
+ * @throws None
+ */
+void solve(vector<pair<int, int>> graph[], int v, int sourceNode)
+{
     stack<int> topsorted;
     vector<int> indegree(v, 0);
     for (int i = 0; i < v; i++){
@@ -45,7 +55,6 @@ void solve(vector<pair<int, int>> graph[], int v, int sourceNode){
         cout << it << " ";
     }
 }
-
 
 int main(){
 ios_base::sync_with_stdio(false); // fastio
