@@ -61,11 +61,34 @@ int maxRect(vector<int>& histogram){
     return maxArea;
 }
 
+//optimized approach
+int maxRect2(vector<int> &histogram)
+{
+    int n = histogram.size();
+    stack<int> s;
+    int maxArea = 0;
+
+    // Step 1: Compute max area using heights of bars in histogram
+    for (int i = 0; i <= n; i++)
+    {
+        while (!s.empty() && (i == n || histogram[s.top()] >= histogram[i]))
+        {
+            int height = histogram[s.top()];
+            s.pop();
+            int width = s.empty() ? i : i - s.top() - 1;
+            maxArea = max(maxArea, height * width);
+        }
+        s.push(i);
+    }
+
+    return maxArea;
+}
+
 int main(){
 ios_base::sync_with_stdio(false); // fastio
 cin.tie(NULL); // fastio
-vector<int> v = {45, 1, 5, 20, 2, 3, 1};
-cout<<maxRect(v);
+vector<int> v = {2, 1, 5, 6, 2, 3, 1};
+cout<<maxRect2(v);
 
 return 0;
 }
