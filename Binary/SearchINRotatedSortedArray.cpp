@@ -15,6 +15,9 @@ using namespace std;
  * @return the index of the target value in the vector if found, -1 otherwise
  *
  * @throws None
+ * 
+ * 
+ * @bug drawback of given algorithm is that it will not work for duplicate values in the vector and this problem occurs if v[start] == v[end] == v[mid] so in this case if target != v[start] then our target is present somewhere between start+1 and mid-1 so we shrink our search space
  */
 
 int search(vector<int> v, int target)
@@ -69,9 +72,11 @@ int main()
     ios_base::sync_with_stdio(false); // fastio
     cin.tie(NULL);                    // fastio
     vector<int> v = {4, 5, 6, 7, 0, 1, 2};
-    cout << search(v, 0) << endl;   // return 4
+    // vector<int> v = {3,1,2,3,3,3,3}; will not work for this case
+
+    cout << search(v, 1) << endl;   // return 4
     cout << search(v, 2) << endl;   // return 6
-    cout << search(v, 4) << endl;   // return 0
+    cout << search(v, 3) << endl;   // return 0
     cout << search(v, 100) << endl; // return -1
     return 0;
 }
