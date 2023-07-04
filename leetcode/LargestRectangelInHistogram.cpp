@@ -52,7 +52,10 @@ int maxRect(vector<int>& histogram){
         s.push(i);
         i--;
     }
-
+    for(auto it:right) {
+        cout<<it<<" ";
+    }
+    cout << endl;
     // Step 3: Find the maximum area
     int maxArea = 0;
     for (int i = 0; i < n; i++){
@@ -88,7 +91,6 @@ int main(){
 ios_base::sync_with_stdio(false); // fastio
 cin.tie(NULL); // fastio
 vector<int> v = {2, 1, 5, 6, 2, 3, 1};
-cout<<maxRect2(v);
-
+cout<<maxRect(v);
 return 0;
 }
