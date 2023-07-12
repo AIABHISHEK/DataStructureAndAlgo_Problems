@@ -76,8 +76,8 @@ int solve(int n, int k, vector<int> &stalls)
             ans = mid;
             start = mid + 1;
         }
-        else
-        {
+        else  
+        { 
             end = mid - 1;
         }
     }
