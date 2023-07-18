@@ -80,11 +80,19 @@ void preOrder_iter(Node *node){
     
 }
 
+/**
+ * Performs an in-order traversal of a binary tree iteratively.
+ *
+ * @param node The root node of the binary tree.
+ *
+ * @throws None.
+ */
 void inOrder_iter(Node* node){
 
     stack<Node *> s;
     Node *n = node;
     while (true){
+        //traverse left until we reach leaf node 
         if(n != NULL){
             s.push(n);
             n = n->left;
@@ -142,7 +150,7 @@ node->right->left = new Node(7);
 node->left->left = new Node(8);
 // preorder(node);
 // inorder(node);
-// postOrder(node);
+postOrder(node);
 // levelOrder(node);
 // preOrder_iter(node);
 // inOrder_iter(node);
