@@ -10,15 +10,39 @@ struct Node
     Node *links[26];
     int count = 0;
 
+    /**
+     * Check if the given character is a key in the links array.
+     *
+     * @param ch the character to check
+     *
+     * @return true if the character is a key, false otherwise
+     */
     bool containsKey(char ch)
     {
         return links[ch - 'a'] != NULL;
     }
 
+    /**
+     * Sets the key for a given character in the trie.
+     *
+     * @param ch The character to set the key for.
+     * @param node The node to associate with the character.
+     *
+     * @throws None.
+     */
     void putKey(char ch, Node *node)
     {
         links[ch - 'a'] = node;
     }
+    /**
+     * Retrieves the Node associated with the given character.
+     *
+     * @param ch the character to search for
+     *
+     * @return the Node associated with the character
+     *
+     * @throws None
+     */
     Node *get(char ch)
     {
         return links[ch - 'a'];
@@ -29,11 +53,19 @@ class Trie
 {
 public:
     Node *root;
+    
     Trie()
     {
         root = new Node();
     }
 
+    /**
+     * Inserts a word into the data structure.
+     *
+     * @param word the word to be inserted
+     *
+     * @throws None
+     */
     void insert(string word)
     {
         Node *node = root;
@@ -52,6 +84,13 @@ public:
         // at the end add a Node increase count , which will mark as the end of word and also store count of the word
     }
 
+    /**
+     * Searches for a word in the data structure.
+     *
+     * @param word the word to search for
+     *
+     * @return true if the word is found, false otherwise
+     */
     bool search(string word)
     {
         Node *node = root;
@@ -75,6 +114,15 @@ public:
         }
         return true;
     }
+    /**
+     * Counts the number of words in the Trie data structure that start with the given word.
+     *
+     * @param word the word to search for in the Trie
+     *
+     * @return the number of words in the Trie that start with the given word
+     *
+     * @throws None
+     */
     int countWordsStartsWith(string word)
     {
         Node *node = root;
