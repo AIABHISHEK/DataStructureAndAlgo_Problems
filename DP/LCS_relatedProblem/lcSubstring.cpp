@@ -46,6 +46,14 @@ int solve_top_down(string a, string b, int la, int lb) {
         }
 
     }
+    //print the value of the array t
+    for (int i = 0; i <= la; i++) {
+        for (int j = 0; j <= lb; j++) {
+            cout << t[i][j] << " ";
+        }
+        cout << endl;
+    }
+    
     return m;
 }
 int main() {
@@ -56,7 +64,7 @@ int main() {
 
     string a, b;
     cin >> a >> b;
-    cout << solve(a, b, a.length(), b.length(), 0);
+    // cout << solve(a, b, a.length(), b.length(), 0);
     cout << solve_top_down(a, b, a.length(), b.length());
     return 0;
 }
