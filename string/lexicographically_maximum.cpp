@@ -6,6 +6,7 @@
 using namespace std;
 
 // given a string delete characters duplicates occurence until all the charcaters in string are distinct return the lexicographically maximum string that we can obtain
+
 string removeDuplicateLetters(string s)
 {
     reverse(s.begin(), s.end());
