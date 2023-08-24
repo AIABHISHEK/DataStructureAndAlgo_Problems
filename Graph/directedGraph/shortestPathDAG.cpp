@@ -41,7 +41,7 @@ void solve(vector<pair<int, int>> graph[], int v, int sourceNode)
         }
     }
 
-    vector<int> distance (v, INT64_MAX);
+    vector<int> distance (v, INT_MAX);
     distance[sourceNode] = 0;
     while(!topsorted.empty()){
         int node = topsorted.top();
